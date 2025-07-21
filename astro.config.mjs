@@ -12,6 +12,6 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   site: 'https://anushreeanandani.github.io',
   output:'static',
-  //integrations: [mdx(), sitemap(), tailwind(), icon()],
- // adapter: netlify(),
+  integrations: [mdx(), sitemap(), tailwind(), icon()],
+  adapter: netlify(),
 });

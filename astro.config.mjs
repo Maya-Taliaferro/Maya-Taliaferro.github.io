@@ -7,8 +7,6 @@ import tailwind from "@astrojs/tailwind";
 
 import icon from "astro-icon";
 
-import github from '@astrojs/github'; // optional adapter
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://anushreeanandani.github.io',

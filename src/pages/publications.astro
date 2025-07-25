@@ -1,0 +1,76 @@
+---
+import PublicationList from "@/layouts/PublicationList.astro";
+
+const publications = {
+  2025: [
+    {
+      title: "Constructed languages are processed by the same brain mechanisms as natural languages",
+      authors: "Malik-Moraleda, S., <strong>Taliaferro, M.</strong>, Shannon, S., Jhinkan, N., Swords, S., Frommer, P., Peterson, D., Okrand, M., Sims, J., Cardwell, R., Freeman, C., Fedorenko, E.",
+      venue: "Proceedings of the National Academy of Sciences",
+      doi: "https://doi.org/10.1073/pnas.XXXXXXX"
+    }
+  ],
+  2024: [
+    {
+      title: "Functional characterization of the language network of polyglots and hyperpolyglots with precision fMRI",
+      authors: "Malik-Moraleda, S., Jouravlev, O., <strong>Taliaferro, M.</strong>, Mineroff, Z., Cucu, T., Mahowald, K., Blank, I., Fedorenko, E.",
+      venue: "Cerebral Cortex",
+      doi: "https://doi.org/10.1093/cercor/bhacXXXX"
+    },
+    {
+      title: "Ambivalence by design: A computational account of loopholes",
+      authors: "Qian, P., Bridgers, S., <strong>Taliaferro, M.</strong>, Parece, K., Ullman, T.",
+      venue: "Cognition",
+      doi: "https://doi.org/10.1016/j.cognition.2024.104XXXX"
+    }
+  ],
+  2023: [
+    {
+      title: "Driving and suppressing the human language network using large language models",
+      authors: "Tuckute, G., Sathe, A., Srikant, S., <strong>Taliaferro, M.</strong>, Wang, M., Schrimpf, M., Kay, K., Fedorenko, E.",
+      venue: "Nature Human Behavior",
+      doi: "https://doi.org/10.1038/s41562-023-XXXXXX"
+    }
+  ],
+  "Under Review": [
+    {
+      title: "Linguistic inputs must be syntactically parsable to fully engage the language network",
+      authors: "Kauf, C., Hee So, K., Lee, E., Jhingan, N., She, J., <strong>Taliaferro, M.</strong>, Gibson, E., Fedorenko, E.",
+      venue: "bioRxiv",
+      doi: "#"
+    },
+    {
+      title: "Loopholes: A window into value alignment and communication of meaning",
+      authors: "Bridgers, S., <strong>Taliaferro, M.</strong>, Parece, K., Ullman, T., Schulz, L.",
+      venue: "PsyArxiv",
+      doi: "#"
+    }
+  ]
+};
+---
+
+<PublicationList title="Publications">
+  {Object.entries(publications).map(([year, entries]) => (
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">{year}</h2>
+      <ul class="list-disc list-inside space-y-4">
+        {entries.map(pub => (
+          <li>
+            <span class="font-medium">{pub.title}</span> —&nbsp;
+            <span class="text-sm text-pblack" set:html={pub.authors + (pub.venue ? ` — <em>${pub.venue}</em>` : "")} />
+            {pub.doi && pub.doi !== "#" && (
+                <a
+                href={pub.doi}
+                target="_blank"
+                rel="noopener"
+                class="text-pblue hover:underline text-sm ml-2"
+                >
+                Link
+                </a>
+            )}
+            </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</PublicationList>

@@ -1,0 +1,25 @@
+---
+// src/layouts/PublicationList.astro
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const {
+  title = "Publications",
+  description = "A list of publications by year",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main class="container mx-auto px-6 md:px-10 text-black">
+      <h1 class="text-4xl font-bold mb-8 mt-10">{title}</h1>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

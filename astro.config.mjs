@@ -9,7 +9,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://anushreeanandani.github.io',
+  site: 'https://Maya-Taliaferro.github.io',
   base: '/',
   output:'static',
   integrations: [mdx(), sitemap(), tailwind(), icon()],

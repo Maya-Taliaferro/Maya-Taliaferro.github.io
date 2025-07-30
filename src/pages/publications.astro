@@ -69,21 +69,23 @@ const publications = {
       <ul class="list-disc list-inside space-y-4">
         {entries.map(pub => (
           <li>
-            <span class="font-medium">{pub.title}</span> —&nbsp;
-            <span class="text-sm text-pblack" set:html={pub.authors + (pub.venue ? ` — <em>${pub.venue}</em>` : "")} />
+            <span class="font-medium">{pub.title}</span> —{" "}
+            <span class="text-sm text-pblack">
+              <span set:html={pub.authors}></span>
+              {pub.venue && <> — <em>{pub.venue}</em></>}
+            </span>
             {pub.doi && pub.doi !== "#" && (
-                <a
+              <a
                 href={pub.doi}
                 target="_blank"
                 rel="noopener"
                 class="text-pblue hover:underline text-sm ml-2"
-                >
+              >
                 Link
-                </a>
+              </a>
             )}
-            </li>
+          </li>
         ))}
       </ul>
     </section>
-  ))}
-</PublicationList>
+))}

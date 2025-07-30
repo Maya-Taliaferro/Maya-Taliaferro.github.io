@@ -50,7 +50,20 @@ const publications = {
 ---
 
 <PublicationList title="Publications">
-  {Object.entries(publications).map(([year, entries]) => (
+  {Object.entries(publications)
+  .sort(([a], [b]) => {
+    // Handle numeric years first, sort descending
+    const isANumber = !isNaN(a);
+    const isBNumber = !isNaN(b);
+
+    if (isANumber && isBNumber) {
+      return Number(b) - Number(a);
+    }
+    if (isANumber) return -1;
+    if (isBNumber) return 1;
+    return a.localeCompare(b);
+  })
+  .map(([year, entries]) => (
     <section class="mb-12">
       <h2 class="text-2xl font-semibold mb-4">{year}</h2>
       <ul class="list-disc list-inside space-y-4">

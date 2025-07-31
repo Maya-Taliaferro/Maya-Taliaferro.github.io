@@ -42,17 +42,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       movie buff, especially with <a href="blog/moviereviews/" style="color: #fb3f00; text-decoration: none;">horror movies</a>.
     </p>--!>
 
-    <!--
-    <a
-      rel="noopener noreferrer"
-      href="mailto:mjt10029@gmail.com"
-      target="_blank"
-      class="bg-pblue px-5 py-3 border-1 border-black rounded-lg shadow-card hover:shadow-hover transition"
-    >
-      Get in touch
-    </a>
-    --!>
-
   </div>
   <div
     class="md:w-1/2 object-contain flex items-center justify-center p-10 group"
@@ -77,11 +66,11 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
           <p>Maya Taliaferro</p>
         </div>
         --!>
-        <div class="h-80 w-60 overflow-hidden relative -mt-30 rounded-2xl">
+        <div class="scale-125 rounded-2xl border-2 border-black overflow-hidden inline-block">
           <Image
-            class="object-bottom absolute bottom-0 group-hover:scale-105 transition"
+            class="w-full h-full object-cover"
             src={images["/src/assets/hero.png"]()}
-            alt="Sorolla, photo wiki"
+            alt="Maya Taliaferro"
           />
         </div>
       </div></a
